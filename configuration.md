@@ -1,17 +1,38 @@
 ![foreman_logo](./img/icon.png)
 
+# Configuration
 
-# Properties
+`foremand.toml` is a main configuration file of Foreman.
 
-## Server
+## Properties
 
+### Server
 
-## QoS
+| Section | Property | Type | Description |
+| --- | --- | --- | --- |
+| server | http_port | Integer | |
+| | carbon_port | Integer | |
 
-## Action
+### QoS
 
-### actions
+| Section | Sub Section | Property | Type | Description |
+| --- | --- | --- | --- | --- |
+| qoses | qos | name | String | |
+| | | formula | String | |
 
-name
+### Action
 
-## Route
+| Section | Sub Section | Property | Type | Description |
+| --- | --- | --- | --- | --- |
+| actions | action | name | String | |
+| | | language | String | python |
+| | | encoding | String | |
+| | | code | String | |
+
+### Route
+
+| Section | Sub Section | Property | Type | Description |
+| --- | --- | --- | --- | --- |
+| routes | route | name | String | |
+| | | src | String | |
+| | | dest | String | |
