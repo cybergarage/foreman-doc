@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="programming_model.svg"
-   inkscape:export-filename="/Users/skonno/Desktop/programming_model.png"
+   inkscape:export-filename="/Users/skonno/Src/foreman-doc/img/programming_model.png"
    inkscape:export-xdpi="140"
    inkscape:export-ydpi="140">
   <defs
@@ -225,16 +225,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.1692372"
-     inkscape:cx="259.54648"
+     inkscape:cx="150.52198"
      inkscape:cy="171.7311"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="true"
      showguides="true"
      inkscape:window-width="1816"
      inkscape:window-height="1012"
-     inkscape:window-x="283"
-     inkscape:window-y="114"
+     inkscape:window-x="485"
+     inkscape:window-y="51"
      inkscape:window-maximized="0"
      inkscape:snap-global="true"
      fit-margin-top="0"
@@ -261,7 +261,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -435,14 +435,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:3.82512569;stroke-dasharray:none;stroke-dashoffset:0"
-       x="244.55324"
-       y="295.53918"
+       x="251.92911"
+       y="296.00018"
        id="text4250"
        sodipodi:linespacing="125%"><tspan
-         y="295.53918"
-         x="244.55324"
+         y="296.00018"
+         x="251.92911"
          id="tspan4252"
-         sodipodi:role="line">Time-series Database</tspan></text>
+         sodipodi:role="line">Metrics Manager</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:3.82512569;stroke-dasharray:none;stroke-dashoffset:0"
