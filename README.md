@@ -9,7 +9,11 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 - [Programming Model](programming_model.md)
 - [Data Model](data_model.md)
 
-## Specificatoin
+## Specification
 
 - [Foreman Query Language](dsl.md)
 - [Configuration](configuration.md)
+
+# For Developer
+
+- [Developers Guide](developer.md)
