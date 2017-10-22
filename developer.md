@@ -40,11 +40,16 @@ make install
 
 TBD
 
+##### XCode
+
+- lib/macosx/xcode/ libforeman++.xcodeproj
+- test/macosx/xcode/foremantest.xcodeproj
+
 ### foreman-go
 
 #### MacOSX
 
-##### Setup
+##### Command Line
 
 ```
 git clone https://github.com/cybergarage/foreman-go.git
