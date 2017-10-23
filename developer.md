@@ -16,7 +16,11 @@ TBD
 
 Foreman consists of two main packages, [foreman-cc](https://github.com/cybergarage/foreman-cc) and [foreman-go](https://github.com/cybergarage/foreman-go).
 
-### foreman-cc
+## foreman-cc
+
+### Buiding from Source
+
+### MacOSX
 
 To build [foreman-cc](https://github.com/cybergarage/foreman-cc), you have to install latest [XCode](https://developer.apple.com/xcode/) from AppStore and the following commands using [Homebrew](https://brew.sh).
 
@@ -24,9 +28,6 @@ To build [foreman-cc](https://github.com/cybergarage/foreman-cc), you have to in
 brew install automake autoconf folly
 ```
 
-#### MacOSX
-
-##### Buiding from Source
 ```
 git clone https://github.com/cybergarage/foreman-cc.git
 cd foreman-cc/
@@ -36,11 +37,11 @@ make
 make install
 ```
 
-##### Homebrew
+### Homebrew
 
 TBD
 
-##### XCode
+#### XCode
 
 - lib/macosx/xcode/ libforeman++.xcodeproj
 - test/macosx/xcode/foremantest.xcodeproj
