@@ -14,8 +14,8 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 
 - [Foreman Query Language](dsl.md)
 - [RPC Protocol](rpc_protocol.md)
+- [Zeroconf Protocol](zeroconf_protocol.md)
 - [Configuration](configuration.md)
-- [Zeroconf Protocol](zeroconf.md)
 
 ## For Developer
 

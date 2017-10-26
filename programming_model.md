@@ -12,7 +12,7 @@ The programming model is consist of Foreman's metrics, rules, actions and routes
 
 The metrics manager has a pluggable [time-series database](https://en.wikipedia.org/wiki/Time_series_database) to store metrics which are pushed from other data sources.
 
-![metrics_datastore](./img/metrics_datastore.png)
+![metrics_datastore](./img/metrics_store.png)
 
 The Foreman's database is also an [active database](https://en.wikipedia.org/wiki/Active_database), it send the latest metrics data to the subscribers when the metrics are updated.
 
