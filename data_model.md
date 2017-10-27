@@ -8,9 +8,17 @@ Foreman has two abstracted data models, the registry store and metric store, int
 
 ## Registry Store
 
-Foreman has an abstracted registry store to store any metadata such as the configuration settings. The store is a simple searchable key-value store as the following.
+Foreman has an abstracted registry store to store any metadata such as the configuration settings. The store is a hierarchical key-value store as the following.
 
 ![logo](./img/datamodel_registry.png)
+
+The following metadata are stored into the registry store.
+
+- [Programmng Model](programming_model.md)
+  - QoS
+  - Action
+  - Rule
+- [Configuration](configuration.md)
 
 ### Abstract Interface
 
@@ -35,6 +43,15 @@ type Store interface {
 Foreman has an abstracted metric store to store time-series metrics data such as monitoring data. The store is a simple matrix time-series database as the following.
 
 ![logo](./img/datamodel_metrics.png)
+
+### Public Interfaces
+
+Foreman offers the following interfaces to store and access the time-series metrics data in the metric store.
+
+- [RPC Protocol](rpc_protocol.md)
+  - [Foreman Query Language](dsl.md)
+- [Graphite Compatible Interface](graphite.md)
+
 
 ### Abstract Interface
 

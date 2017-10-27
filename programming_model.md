@@ -34,8 +34,12 @@ Please see [System Model](system_model.md) to know about the system model for th
 
 ## Action Manager
 
-TBD
+### Method
 
-## Route
+Foreman enables to build monitoring actions to define the small methods using any programming languages and connect between the methods like pipeline of Unix.
 
-TBD
+### Route
+
+Foreman supports dataflow programming as reactive programming to execute a complex DAG (directed acyclic graph). In Foreman, the dataflow function is called as ’route’.
+
+![route](./img/programming_model_route.png)
