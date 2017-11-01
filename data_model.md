@@ -8,7 +8,7 @@ Foreman has two abstracted data models, the registry store and metric store, int
 
 ## Registry Store
 
-Foreman has an abstracted registry store to store any metadata such as the configuration settings. The store is a hierarchical key-value store as the following.
+Foreman has an abstracted registry store to store any metadata such as the configuration settings. The store is a hierarchical object store as the following.
 
 ![logo](./img/datamodel_registry.png)
 
@@ -22,19 +22,67 @@ The following metadata are stored into the registry store.
 
 ### Abstract Interface
 
-The abstracted registry store is defined as the following interface.
+#### Store
+
+The abstracted registry store is defined as the following interface, and it can store multiple objects hierarchically.
 
 ```
 type Store interface {
 	Open() error
 	Close() error
 
-	SetRegistry(r *Record) error
-	GetRegistry(key string) (*Record, error)
-	
-	Query(q *Query) ([]*Record, error)
+	SetObject(obj *Object) error
+	GetObject(objID string) (*Object, error)
+	DeleteObject(objID string) (*Object, error)
+
+	Browse(q *Query) ([]*Object, error)
+	Search(q *Query) ([]*Object, error)
+}
+```
+
+#### Object
+
+The stored object is defined as the following interface, and it can store any multiple properties like object-oriented database. 
+
+```
+type Object interface {
+	GetID() string
+	GetParentID() string
+	GetName() string
+
+	SetString(data string) error
+	GetString() (string, error)
+
+	GetProperty(name string) (string, error)
+	GetAllProperties() ([]Property, error)
 
 	String() string
+}
+```
+
+The all object has a unique ID, the all object can have multiple child object. To get all child objects in an object, use `Store::Browse()` with the objectID.
+
+The object which has no any properties is defined as `container` object, and the object which has any properties is called as `item` object.
+
+The root object is a special container object. The object ID is '0', and the parent ID is blank.
+
+#### Property
+
+The property has a name and value as the following interface.
+
+```
+type Property interface {
+	SetName(name string)
+	GetName() string
+
+	SetString(value string) error
+	GetString() (string, error)
+
+	SetInteger(value int) error
+	GetInteger() (int, error)
+
+	SetReal(value float64) error
+	GetRealInteger() (float64, error)
 }
 ```
 
