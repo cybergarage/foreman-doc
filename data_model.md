@@ -22,6 +22,8 @@ The following metadata are stored into the registry store.
 
 ### Abstract Interface
 
+The registry store consists of the following three abstract interfaces, `Store`, `Object` and `Property`.
+
 #### Store
 
 The abstracted registry store is defined as the following interface, and it can store multiple objects hierarchically.
@@ -42,7 +44,7 @@ type Store interface {
 
 #### Object
 
-The stored object is defined as the following interface, and it can store any multiple properties like object-oriented database. 
+The stored object is defined as the following interface, and it can store any multiple properties like object-oriented database.
 
 ```
 type Object interface {
