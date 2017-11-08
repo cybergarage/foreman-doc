@@ -33,7 +33,8 @@ type Store interface {
 	Open() error
 	Close() error
 
-	SetObject(obj *Object) error
+	CreateObject(obj *Object) error
+	UpdateObject(obj *Object) error
 	GetObject(objID string) (*Object, error)
 	DeleteObject(objID string) (*Object, error)
 
