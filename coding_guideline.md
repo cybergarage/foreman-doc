@@ -11,7 +11,7 @@ To develop `foreman-go`, you must follow the following coding guidelines basical
 
 - [Effective Go](https://golang.org/doc/effective_go.html#interface-names)
 
-### Extra Coding Guideline
+### Extra Coding Guidelines
 
 In addition to the above standard guideline, you must follow the following extra rules too.
 
@@ -25,6 +25,8 @@ Multiple-method interfaces are named by the class name plus an `-ing` suffix.
 To develop `foreman-cc`, you must follow understand the following coding guidelines basically.
 
 - [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/)
+
+### Extra Coding Guidelines
 
 We extends the standard guideline, and the all source codes of `foreman-cc` are formatted automatically by `clang-format` based on the following setting.
 
