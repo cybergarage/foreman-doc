@@ -6,7 +6,7 @@ This document aims to describe an introduction to Foreman committers and contrib
 
 ## Coding Styles
 
-TBD
+- [Coding Guidelines](coding_guideline.md)
 
 ## Commit Guidelines
 
