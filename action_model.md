@@ -12,6 +12,27 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 
 ![route](./img/programming_model_route.png)
 
+## QoS JSON Format
+
+```
+[
+  [
+    {
+      "param " : ...,
+      "op" : ...,
+      "threshold" : ...,
+      "current" : ...,
+    },
+    {
+      ....
+    }
+  ],
+  [
+    ....
+  ]
+]
+```
+
 ## Supported Programming Languages
 
 | Item | Type | Description |
