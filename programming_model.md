@@ -1,6 +1,6 @@
 ![logo](./img/icon.png)
 
-# Pragramming Model
+# Programming Model
 
 The programming model of Foreman is based on [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) like [publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) to set the failure detection and autonomous recovery functions dynamically. 
 
@@ -34,12 +34,8 @@ Please see [System Model](system_model.md) to know about the system model for th
 
 ## Action Manager
 
-### Method
+The action manager executes the specified method which are connected with the specified QoSs by the routes. The operator can define the action methods using some dynamic programming languages such as Python, JavaScript and Tcl, and Java.
 
-Foreman enables to build monitoring actions to define the small methods using any programming languages and connect between the methods like pipeline of Unix.
+Please see the following documentation to know tha action model in more detail.
 
-### Route
-
-Foreman supports dataflow programming as reactive programming to execute a complex DAG (directed acyclic graph). In Foreman, the dataflow function is called as ’route’.
-
-![route](./img/programming_model_route.png)
+- [Action Model](action_model.md)
