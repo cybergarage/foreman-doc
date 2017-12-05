@@ -35,10 +35,26 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 
 ### Python
 
+For Python, the action method specification is bellow.
+
 ```
-def <method_name>(in, out):
-    return (true or object)
+def <method_name>(params, results):
+    return ((True || None) or object)
 ```
+
+#### Arguments
+
+| Name | Direction | Type | Description |
+| --- | --- | --- | --- |
+| params | IN | Dictionary | Dictionary of input parameters for the action |
+| results | OUT | Dictionary | - |
+
+#### Return value
+
+The action method should return `True` or `None` when it is executed normally. 
+However, you don't have to return the success objects expressly because all Python functions return the `None` object when these don't use `return`.
+
+The action method should return an error object when it is not executed normally. The action manager translates the error object to a string, set the string as the detail error message.
 
 ## Event
 
