@@ -14,6 +14,8 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 
 ## Supported Programming Languages
 
+### Action Specificcation
+
 | Item | Type | Description |
 | --- | --- | --- |
 | Method Name | - |  |
@@ -21,6 +23,15 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 | Request Paramaters | map<string, object> | |
 | Response Paramaters | map<string, object> | |
 | Error | error | |
+
+### Parameter Data Types
+
+| Foreman Type | C++ | Go | Python |
+| --- | --- | --- | --- |
+| Integer | long | Int64 | long |
+| Real | double | float64 | float |
+| String | string | string | string |
+| Bool | bool | bool | bool |
 
 ### Python
 
