@@ -36,7 +36,8 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 ### Python
 
 ```
-def <method_name>(in, out, error):
+def <method_name>(in, out):
+    return (true or object)
 ```
 
 ## Event
