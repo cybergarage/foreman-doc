@@ -36,6 +36,12 @@ To develop `foreman-cc`, you must follow understand the following coding guideli
 
 ### Extra Coding Guidelines
 
+#### Comply to C++ 11 specification
+
+Basically, comply to C++ 11 specifications which are supported by GCC and Clang as the following.
+
+- [C++ compiler support](http://en.cppreference.com/w/cpp/compiler_support)
+
 #### Prefer auto to explicit type declarations
 
 Unless required for explicit type declarations, use `auto` to declare any variables proactively for simplicity and refactoring purpose.
