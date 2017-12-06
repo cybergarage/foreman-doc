@@ -62,13 +62,6 @@ std::vector<int> vec;
 int var = vec.at(0);
 ```
 
-| Right | Wrong |
-
-| Right | Wrong |
-| --- | --- |
-
-
-
 ### Formatter
 
 We extends the standard guideline, and the all source codes of `foreman-cc` are formatted automatically by `clang-format` based on the following setting.
