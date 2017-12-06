@@ -36,6 +36,35 @@ To develop `foreman-cc`, you must follow understand the following coding guideli
 
 ### Extra Coding Guidelines
 
+#### Prefer auto to explicit type declarations
+
+Unless required for explicit type declarations, use `auto` to declare any variables proactively for simplicity and refactoring purpose.
+
+#### Right
+
+```
+std::vector<int> vec;
+....
+auto var = vec.at(0);
+```
+
+#### Wrong
+
+```
+std::vector<int> vec;
+....
+int var = vec.at(0);
+```
+
+| Right | Wrong |
+
+| Right | Wrong |
+| --- | --- |
+
+
+
+### Formatter
+
 We extends the standard guideline, and the all source codes of `foreman-cc` are formatted automatically by `clang-format` based on the following setting.
 
 - [.clang-format](https://github.com/cybergarage/foreman-cc/blob/master/.clang-format)
