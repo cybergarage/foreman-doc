@@ -2,11 +2,15 @@
 
 # Action Model
 
-## Method
+## Execution Model
+
+![route](./img/programming_model.png)
+
+### Method
 
 Foreman enables to build monitoring actions to define the small methods using any programming languages and connect between the methods like pipeline of Unix.
 
-## Route
+### Route
 
 Foreman supports dataflow programming as reactive programming to execute a complex DAG (directed acyclic graph). In Foreman, the dataflow function is called as ’route’.
 
