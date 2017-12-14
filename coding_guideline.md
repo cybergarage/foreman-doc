@@ -7,63 +7,9 @@ To develop `foreman-go` and `foreman-cc`, you should understand the following co
 
 ## Go
 
-To develop `foreman-go`, you must follow the following coding guidelines basically.
-
-- [Effective Go](https://golang.org/doc/effective_go.html#interface-names)
-- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
-
-### Static Analyzer
-
-In addition to the above standard guideline, you must use the following static analysers and fix the all warnings 
-
-- [go vet](https://golang.org/cmd/vet/)
-- [golint](https://github.com/golang/lint)
-
-### Extra Coding Guidelines
-
-In addition to the above standard guideline, you must follow the following extra rules too.
-
-#### Interface names
-
-[Effective Go](https://golang.org/doc/effective_go.html#interface-names) specifies only an interface naming rule when the interface has only a method. 
-Multiple-method interfaces are named by the class name plus an `-ing` suffix.
+- [Coding Guidelines](https://github.com/cybergarage/foreman-go/blob/master/doc/coding_guideline.md)
 
 ## C++
 
-To develop `foreman-cc`, you must follow understand the following coding guidelines basically.
-
-- [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/)
-
-### Extra Coding Guidelines
-
-#### Comply to C++ 11 specification
-
-Basically, comply to C++ 11 specifications which are supported by GCC and Clang as the following.
-
-- [C++ compiler support](http://en.cppreference.com/w/cpp/compiler_support)
-
-#### Prefer auto to explicit type declarations
-
-Unless required for explicit type declarations, use `auto` to declare any variables proactively for simplicity and refactoring purpose.
-
-#### Right
-
-```
-std::vector<int> vec;
-....
-auto var = vec.at(0);
-```
-
-#### Wrong
-
-```
-std::vector<int> vec;
-....
-int var = vec.at(0);
-```
-
-### Formatter
-
-We extends the standard guideline, and the all source codes of `foreman-cc` are formatted automatically by `clang-format` based on the following setting.
-
-- [.clang-format](https://github.com/cybergarage/foreman-cc/blob/master/.clang-format)
+- [Coding Guidelines](https://github.com/cybergarage/foreman-cc/blob/master/doc/coding_guideline.md)
+ 
