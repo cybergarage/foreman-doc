@@ -44,7 +44,7 @@ type Store interface {
 
 Foreman has an abstracted register store to store temporary data such as latest metric values and user-defined aggregated values. The store is a simple key-object store as the following.
 
-![register](./img/datamodel_register.png)
+![register]./img/datamodel_register.png)
 
 The following temporary data are stored into the register store.
 
