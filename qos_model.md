@@ -39,8 +39,8 @@ Currently, QoS should be specified by CNF, Conjunctive Normal Form.
 
 ```
 qos :=　"(" clause ("&" clause)* ")"
-clause := condition ("|" condition)*
-condition := "(" var operator value ")"
+clause := quority ("|" quority)*
+quority := "(" var operator value ")"
 operetor := "=" | "!=" | ">" | "<" | ">=" |  "<="
 var := [a-z_-.]*
 value := <floating_point>
