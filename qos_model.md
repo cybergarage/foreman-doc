@@ -35,7 +35,7 @@ Then the first specified ANF is modified and optimized using the other concerned
 
 ## QoS EBNF
 
-Currently, QoS should be specified by CNF, Conjunctive Normal Form.
+Currently, QoS should be specified by DNF, Disjunctive normal form.
 
 ```
 qos :=　"(" clause ("&" clause)* ")"
