@@ -1,3 +1,3 @@
 ![logo](./img/icon.png)
 
-# RPC Protocol
+# Zeroconf Protocol
