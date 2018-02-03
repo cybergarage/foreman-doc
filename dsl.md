@@ -16,13 +16,13 @@ FQL supports the following queries.
 | | SELECT | Get the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
-| | REMOVE | Remove the specified QoS formula |
+| | DELETE | Delete the specified QoS formula |
 | | - | - |
 | Action | SET | Set a new script action |
-| | REMOVE | Remove the specified action |
+| | DELETE | Delete the specified action |
 | | - | - |
 | Route | SET | Set a new route |
-| | REMOVE | Remove the specified route |
+| | DELETE | Delete the specified route |
 | | - | - |
 | Failure Analysis | ANALYZE | Analyze the specified metrics |
 | | - | - |
@@ -82,7 +82,7 @@ The method sets a new QoS formula.
 #### Parameters
 
 ```
-SET QOS name formula
+SET (name, formula) INTO QOS 
 
 name     = TOKEN
 formula  = CNF
@@ -92,14 +92,14 @@ formula  = CNF
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### REMOVE QoS
+### DELETE QoS
 
 The method removes a specified method from the local node.
 
 #### Parameters
 
 ```
-REMOVE QOS name
+DELETE name FROM QOS
 
 name     = TOKEN
 ```
@@ -132,14 +132,14 @@ supported-language = ("js" | "java" | "tcl" | "lua")
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### REMOVE ACTION
+### DELETE ACTION
 
 The remove_method method removes a specified method from the local node.
 
 #### Parameters
 
 ```
-REMOVE ACTION name
+DELETE ACTION name
 
 name     = TOKEN
 ```
