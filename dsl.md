@@ -42,9 +42,9 @@ The method is compatible with the following plaintext protocol of Graphite, it i
 #### Parameters
 
 ```
-INSERT METRICS path value timestamp
+INSERT INFO METRICS VALUES (id, value, timestamp)
 
-path     = TOKEN
+id     = TOKEN
 value    = FLOAT
 timestamp = UNIX_TIMESTAMP
 ```
@@ -62,11 +62,14 @@ The method is compatible with the following Render URL API of Graphite, it retur
 #### Parameters
 
 ```
-SELECT METRICS path <from> <until>
+SELECT (targets)? FROM METRICS (WHERE conditions)?
 
-target     = TOKEN
-from       =
-until      = 
+targets    = ('*' | '(' target (',' target)* ')')
+target     = 'ID' | 'VALUE' | 'TS'
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 #### Return values
@@ -248,7 +251,7 @@ target      = TOKEN
 ##### Parameters
 
 ```
-EXPORT CONFIGURATION 
+EXPORT CONFIG
 ```
 
 ##### Return values
