@@ -12,7 +12,7 @@ FQL supports the following queries.
 
 | Type | Action | Description |
 | --- | --- | --- |
-| Metrics | INSERT | Insert a new metrics |
+| Metrics | SET | Insert a new metrics |
 | | SELECT | Get the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
@@ -42,7 +42,7 @@ The method is compatible with the following plaintext protocol of Graphite, it i
 #### Parameters
 
 ```
-INSERT INFO METRICS VALUES (id, value, timestamp)
+SET (id, value, timestamp) INTO METRICS
 
 id     = TOKEN
 value    = FLOAT
@@ -65,7 +65,7 @@ The method is compatible with the following Render URL API of Graphite, it retur
 SELECT (targets)? FROM METRICS (WHERE conditions)?
 
 targets    = ('*' | '(' target (',' target)* ')')
-target     = 'ID' | 'VALUE' | 'TS'
+target     = 'id' | 'value' | 'ts'
 conditions = condition (AND condition)*
 condition  = operand operator operand
 operand    = TOKEN
@@ -78,7 +78,7 @@ The method returns the specified metrics data by JSON format.
 
 ## QoS
 
-### SET QoS
+### SET
 
 The method sets a new QoS formula.
 
@@ -92,19 +92,22 @@ formula  = CNF
 ```
 
 #### Return values
-
+                     
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### DELETE QoS
+### DELETE
 
 The method removes a specified method from the local node.
 
 #### Parameters
 
 ```
-DELETE name FROM QOS
+DELETE FROM QOS  (WHERE conditions)?
 
-name     = TOKEN
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 ##### Return values
@@ -142,9 +145,12 @@ The remove_method method removes a specified method from the local node.
 #### Parameters
 
 ```
-DELETE ACTION name
+DELETE FROM ACTION  (WHERE conditions)?
 
-name     = TOKEN
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 ##### Return values
