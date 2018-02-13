@@ -55,9 +55,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ### SELECT
 
-The method is compatible with the following Render URL API of Graphite, it returns metrics data of the specified target and period.
-
-- [Graphite : The Render URL API](http://graphite.readthedocs.io/en/latest/render_api.html)
+The method is compatible with the following Render URL API of Graphite, it returns metrics data of the specified target and period by JSON format.
 
 #### Parameters
 
@@ -72,9 +70,18 @@ operand    = TOKEN
 operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
+`SELECT` returns only matched metric names when the target is only specified 'id', otherwise it returns matched metric data which are included with the specified targets such as 'id', 'ts', 'value'.
+
 #### Return values
 
-The method returns the specified metrics data by JSON format.
+The method returns the specified metrics data by JSON format. The response is Graphite compatible, and so the metrics response are the following JSON response format when the query targets the metrics data.
+
+- [Graphite : The Render URL API](http://graphite.readthedocs.io/en/latest/render_api.html)
+
+Otherwise, the metrics response are the following JSON response format when the query targets only metrics without data.
+
+- [Graphite : HTTP API](http://graphite-api.readthedocs.io/en/latest/api.html)
+  - `/metrics/index.json`
 
 ## QoS
 
@@ -124,14 +131,14 @@ The method sets a new method into the local node.
 #### Parameters
 
 ```
-SET ACTION name language encoding code
+SET (name, language, code, encoding) INTO ACTION
 
 name     = TOKEN
 language = supported-language
-encoding = ("none" | "base64")
 code     = TOKEN
+encoding = ("none" | "base64")
 
-supported-language = ("js" | "java" | "tcl" | "lua")
+supported-language = ("js" | "java" | "tcl" | "lua" | "python")
 ```
 
 #### Return values
