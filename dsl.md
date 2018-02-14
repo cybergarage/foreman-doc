@@ -33,7 +33,7 @@ FQL supports the following queries.
 
 ## Metrics
 
-### INSERT
+### SET
 
 The method is compatible with the following plaintext protocol of Graphite, it inserts a new metrics.
 
@@ -109,12 +109,12 @@ The method removes a specified method from the local node.
 #### Parameters
 
 ```
-DELETE FROM QOS  (WHERE conditions)?
+DELETE FROM QOS  (WHERE condition)?
 
-conditions = condition (AND condition)*
-condition  = operand operator operand
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
 operand    = TOKEN
-operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 ##### Return values
@@ -124,7 +124,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ## Action
 
-### SET ACTION
+### SET
 
 The method sets a new method into the local node.
 
@@ -145,19 +145,19 @@ supported-language = ("js" | "java" | "tcl" | "lua" | "python")
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### DELETE ACTION
+### DELETE
 
 The remove_method method removes a specified method from the local node.
 
 #### Parameters
 
 ```
-DELETE FROM ACTION  (WHERE conditions)?
+DELETE FROM ACTION  (WHERE condition)?
 
-conditions = condition (AND condition)*
-condition  = operand operator operand
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
 operand    = TOKEN
-operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 ##### Return values
@@ -167,54 +167,37 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ## Route
 
-#### SET ROUTE
+#### SET
 
 The method sets a new route into the local node.
 
 ##### Parameters
 
 ```
-SET ROUTE source destnation [name] [type] [cond] [params]
+SET (name, source_name, dest_name) INTO ROUTE
 
-name       = TOKEN
-source     = source-object
-destnation = destnation-object
-
-source-object     = (qos-name | action-name)
-destnation-object = [cluster "."] [node "."] (method-name)
-cluster           = ("local" | cluster-name)
-node              = ("local" | "all" | "*" | hash-code)
-cluster-name      = TOKEN
-hash-code         = NODE_HASH
-qos-name          = TOKEN
-action-name       = TOKEN
+name        = TOKEN
+source_name = TOKEN
+dest_name   = TOKEN
 ```
 
 ##### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-#### REMOTE ROUTE
+#### DELETE
 
 The method removes a specified route from the local node.
 
 ##### Parameters
 
 ```
-SET ROUTE name | (source destnation)
+DELETE FROM ROUTE (WHERE condition)?
 
-name       = TOKEN
-source     = source-object
-destnation = destnation-object
-
-source-object     = (trigger-name | method-name)
-destnation-object = [cluster "."] [node "."] (method-name)
-cluster           = ("local" | cluster-name)
-node              = ("local" | "all" | "*" | hash-code)
-cluster-name      = TOKEN
-hash-code         = NODE_HASH
-trigger-name      = TOKEN
-method-name       = TOKEN
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
 ```
 
 ##### Return values
