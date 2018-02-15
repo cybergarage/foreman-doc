@@ -24,6 +24,10 @@ FQL supports the following queries.
 | Route | SET | Set a new route |
 | | DELETE | Delete the specified route |
 | | - | - |
+| Register | SET | Set a new register data |
+| | SELECT | Get the specified register data |
+| | DELETE | Delete the specified register data |
+| | - | - |
 | Failure Analysis | ANALYZE | Analyze the specified metrics |
 | | - | - |
 | Prediction Analysis | ANALYZE | Analyze the specified metrics |
@@ -204,6 +208,37 @@ method-name       = TOKEN
 ##### Return values
 
 The method returns the current all configuration properties.
+
+## Register
+
+### SET
+
+The method sets a new register data.
+
+#### Parameters
+
+```
+SET (name, data) INTO REGISTER
+
+name     = TOKEN
+formula  = TOKEN
+```
+
+#### Return values
+
+The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### DELETE QoS
+
+The method removes a specified method from the local node.
+
+#### Parameters
+
+```
+DELETE name FROM REGISTER
+
+name     = TOKEN
+```
 
 ## Failure Analysis
 
