@@ -39,7 +39,7 @@ The method is compatible with the following plaintext protocol of Graphite, it i
 
 - [Graphite : Feeding In Your Data](http://graphite.readthedocs.io/en/latest/feeding-carbon.html)
 
-#### Parameters
+  #### Parameters
 
 ```
 SET (id, value, timestamp) INTO METRICS
