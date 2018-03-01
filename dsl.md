@@ -46,9 +46,9 @@ The method is compatible with the following plaintext protocol of Graphite, it i
   #### Parameters
 
 ```
-SET (id, value, timestamp) INTO METRICS
+SET (name, value, timestamp) INTO METRICS
 
-id     = TOKEN
+name     = TOKEN
 value    = FLOAT
 timestamp = UNIX_TIMESTAMP
 ```
@@ -67,14 +67,14 @@ The method is compatible with the following Render URL API of Graphite, it retur
 SELECT (targets)? FROM METRICS (WHERE conditions)?
 
 targets    = ('*' | '(' target (',' target)* ')')
-target     = 'id' | 'value' | 'ts'
+target     = 'name' | 'value' | 'ts'
 conditions = condition (AND condition)*
 condition  = operand operator operand
 operand    = TOKEN
 operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
-`SELECT` returns only matched metric names when the target is only specified 'id', otherwise it returns matched metric data which are included with the specified targets such as 'id', 'ts', 'value'.
+`SELECT` returns only matched metric names when the target is only specified 'name', otherwise it returns matched metric data which are included with the specified targets such as 'name', 'ts', 'value'.
 
 #### Return values
 
@@ -108,7 +108,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ### DELETE
 
-The method removes a specified method from the local node.
+The method removes a specified method.
 
 #### Parameters
 
@@ -151,7 +151,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ### DELETE
 
-The remove_method method removes a specified method from the local node.
+The remove_method method removes a specified method.
 
 #### Parameters
 
@@ -167,7 +167,6 @@ operand    = TOKEN
 ##### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
-
 
 ## Route
 
@@ -191,7 +190,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 #### DELETE
 
-The method removes a specified route from the local node.
+The method removes a specified route.
 
 ##### Parameters
 
@@ -206,7 +205,7 @@ operand    = TOKEN
 
 ##### Return values
 
-The method returns the current all configuration properties.
+The method doesn't return anything when the method is success, otherwise returns an error object.
 
 ## Register
 
@@ -219,25 +218,47 @@ The method sets a new register data.
 ```
 SET (name, data) INTO REGISTER
 
-name     = TOKEN
-formula  = TOKEN
+name    = TOKEN
+data  = TOKEN
 ```
 
 #### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### DELETE QoS
+### SELECT
 
-The method removes a specified method from the local node.
+The method returns the specified register data.
 
 #### Parameters
 
 ```
-DELETE name FROM REGISTER
+SELECT FROM REGISTER WHERE condition
 
-name     = TOKEN
+condition  = 'name' '==' <name>
+name         = TOKEN
 ```
+
+#### Return values
+
+The method returns the specified register data by JSON format.
+
+### DELETE
+
+The method removes the specified register.
+
+#### Parameters
+
+```
+DELETE FROM REGISTER WHERE condition
+
+condition  = 'name' '==' <name>
+name         = TOKEN
+```
+
+##### Return values
+
+The method doesn't return anything when the method is success, otherwise returns an error object.
 
 ## Failure Analysis
 

@@ -9,24 +9,15 @@ graph G {
         label="Metrics::Register"
     ];
     
-    mrm [
-        shape = box,
-        label="Metrics::RegisterMetric"
-    ];
-
-    qos [
-        shape = box,
-        label="QoS::QoS"
-    ];
-
-    rule [
-        shape = box,
-        label="QoS::Rule"
-    ];
 
     server [
         shape = box,
         label="Foreman::Server"
+    ];
+
+    qos [
+        shape = box,
+        label="QoS::Manager"
     ];
 
     action [
@@ -36,14 +27,11 @@ graph G {
 
     ms -- mr [label = "StoreMetricAdded"];
 
-    mr -- mrm;
+    mr -- server [label = "RegisterMetricAdded/Updated"];
 
-    mr -- server [label = "RegisterMetricAdded"];
 
-    mrm -- rule [label = "ObjectUpdated"];
-
-    rule -- server [label = "RuleSatisfied"];
-
-    server -- action [label = "RuleSatisfied"];
+    server -- qos [label = "UpdateVariableValue"];
+    qos -- server [label = "RuleSatisfied"];
+    server -- action [label = "PostEvent"];
     
 }
