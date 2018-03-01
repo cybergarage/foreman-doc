@@ -14,7 +14,7 @@ FQL supports the following queries.
 | --- | --- | --- |
 | Metrics | SET | Insert a new metrics |
 | | SELECT | Get the specified metrics data |
-| | ANALIZE | Analyze the specified metrics data |
+| | ANALYZE | Analyze the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
 | | DELETE | Delete the specified QoS formula |
