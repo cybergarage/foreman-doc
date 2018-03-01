@@ -91,7 +91,7 @@ The method analyzes the specifid metrics, and it returns the analysys result by 
 #### Parameters
 
 ```
-ANALYZE METRICS (WHERE conditions)?
+ANALYZE METRICS (WHERE condition)?
 
 targets    = ('*' | '(' target (',' target)* ')')
 target     = 
