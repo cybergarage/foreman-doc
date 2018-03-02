@@ -8,7 +8,7 @@ The operator can post the FQL query to the HTTP interface using GET or POST meth
 
 ## Command Line Tool
 
-`foreman-py` is a client package for Foreman, and it has a command line tool, [`fql`](./doc/fql.md), which can execute the domain specific language of Foreman, [Foremqn Query Language](https://github.com/cybergarage/foreman-doc/blob/master/dsl.md), easily. Please check the following document to know the tool in more detail.
+`foreman-py` is a client package for Foreman, and it has a command line tool, [`fql`](./doc/fql.md), which can execute FQL easily. Please check the following document to know the tool in more detail.
 
 - [`foreman-py`](https://github.com/cybergarage/foreman-py)
   - [fql - The Foreman Command Line Tool](https://github.com/cybergarage/foreman-py/blob/master/doc/fql.md)
