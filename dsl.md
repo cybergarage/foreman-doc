@@ -19,7 +19,9 @@ FQL supports the following queries.
 | | DELETE | Delete the specified QoS formula |
 | | - | - |
 | Action | SET | Set a new script action |
+| | SELECT | Get the specified action data |
 | | DELETE | Delete the specified action |
+| | EXECUTE | Execute the specified action |
 | | - | - |
 | Route | SET | Set a new route |
 | | DELETE | Delete the specified route |
@@ -168,6 +170,25 @@ operand    = TOKEN
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
+### EXECUTE
+
+The method execute a registered method with the specified parameters.
+
+#### Parameters
+
+```
+EXECUTE INTO ACTION (param_names)? (VALUES param_values)? WHERE condition
+
+param_names  = '(' param_name? (',' param_name)* ')'
+param_name   = TOKEN
+param_values = '(' param_value? (',' param_value)* ')'
+param_value = TOKEN
+condition  = 'name' '==' TOKEN
+```
+
+#### Return values
+
+The method returns the execution result by JSON format. 
 
 ## Route
 
