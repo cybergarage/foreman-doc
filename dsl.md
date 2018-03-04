@@ -20,7 +20,8 @@ FQL supports the following queries.
 | | EXPORT | Get the specified QoS formula |
 | | DELETE | Delete the specified QoS formula |
 | | - | - |
-| Action | SET | Set a new script action |
+| Action | SET | Set a new action |
+| | EXPORT | Get the specified action data |
 | | DELETE | Delete the specified action |
 | | EXECUTE | Execute the specified action |
 | | - | - |
@@ -188,6 +189,25 @@ supported-language = ("js" | "java" | "tcl" | "lua" | "python")
 #### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### EXPORT
+
+The method returns the specified action data.
+
+#### Parameters
+
+```
+EXPORT FROM ACTION WHERE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified actions by JSON format. 
 
 ### DELETE
 
