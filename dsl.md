@@ -92,9 +92,13 @@ The method returns time series related metrics with the specified target for any
 ##### Parameters
 
 ```
-ANALYZE target FROM METRICS
+ANALYZE target FROM METRICS WHERE conditions
 
 target      = TOKEN
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 #### Return values
