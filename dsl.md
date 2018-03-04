@@ -14,12 +14,12 @@ FQL supports the following queries.
 | --- | --- | --- |
 | Metrics | SET | Insert a new metrics |
 | | SELECT | Get the specified metrics data |
+| | ANALYZE | Analyze the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
 | | DELETE | Delete the specified QoS formula |
 | | - | - |
 | Action | SET | Set a new script action |
-| | SELECT | Get the specified action data |
 | | DELETE | Delete the specified action |
 | | EXECUTE | Execute the specified action |
 | | - | - |
@@ -30,11 +30,7 @@ FQL supports the following queries.
 | | SELECT | Get the specified register data |
 | | DELETE | Delete the specified register data |
 | | - | - |
-| Failure Analysis | ANALYZE | Analyze the specified metrics |
-| | - | - |
-| Prediction Analysis | ANALYZE | Analyze the specified metrics |
-| | - | - |
-| Configuration | Export | Export the current all configuration |
+| Configuration | EXPORT | Export the current all configuration |
 | | - | - |
 
 ## Metrics
@@ -88,6 +84,23 @@ Otherwise, the metrics response are the following JSON response format when the 
 
 - [Graphite : HTTP API](http://graphite-api.readthedocs.io/en/latest/api.html)
   - `/metrics/index.json`
+
+### ANALYZE
+
+The method returns time series related metrics with the specified target for any purposes such as root cause analysis of failures.
+
+##### Parameters
+
+```
+ANALYZE target FROM METRICS
+
+target      = TOKEN
+```
+
+#### Return values
+
+The method returns the analyze result by JSON format. 
+
 
 ## QoS
 
@@ -177,13 +190,13 @@ The method execute a registered method with the specified parameters.
 #### Parameters
 
 ```
-EXECUTE INTO ACTION (param_names)? (VALUES param_values)? WHERE condition
+EXECUTE method_name (param_names)? (VALUES param_values)?
 
+method_name   = TOKEN
 param_names  = '(' param_name? (',' param_name)* ')'
 param_name   = TOKEN
 param_values = '(' param_value? (',' param_value)* ')'
 param_value = TOKEN
-condition  = 'name' '==' TOKEN
 ```
 
 #### Return values
@@ -248,7 +261,7 @@ formula  = TOKEN
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### DELETE QoS
+### DELETE
 
 The method removes a specified method from the local node.
 
@@ -259,42 +272,6 @@ DELETE name FROM REGISTER
 
 name     = TOKEN
 ```
-
-## Failure Analysis
-
-### ANALYZE
-
-The method returns time series related metrics with the specified target for any purposes such as root cause analysis of failures.
-
-##### Parameters
-
-```
-ANALYZE CORRELATION target 
-
-target      = TOKEN
-```
-
-##### Return values
-
-<TBD>
-
-## Prediction Analysis
-
-### ANALYZE
-
-The method returns time series prediction metrics with the specified target for any purposes such as ....
-
-##### Parameters
-
-```
-ANALYZE PREDICTION target 
-
-target      = TOKEN
-```
-
-##### Return values
-
-<TBD>
 
 ## Configuration
 
