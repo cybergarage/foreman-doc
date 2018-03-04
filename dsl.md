@@ -17,6 +17,7 @@ FQL supports the following queries.
 | | ANALYZE | Analyze the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
+| | EXPORT | Get the specified QoS formula |
 | | DELETE | Delete the specified QoS formula |
 | | - | - |
 | Action | SET | Set a new script action |
@@ -24,10 +25,11 @@ FQL supports the following queries.
 | | EXECUTE | Execute the specified action |
 | | - | - |
 | Route | SET | Set a new route |
+| | EXPORT | Get the specified route data |
 | | DELETE | Delete the specified route |
 | | - | - |
 | Register | SET | Set a new register data |
-| | SELECT | Get the specified register data |
+| | EXPORT | Get the specified register data |
 | | DELETE | Delete the specified register data |
 | | - | - |
 | Configuration | EXPORT | Export the current all configuration |
@@ -124,6 +126,25 @@ formula  = CNF
 #### Return values
                      
 The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### EXPORT
+
+The method returns the specified QoS formulas.
+
+#### Parameters
+
+```
+EXPORT FROM QOS WHERE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified QoS formulas by JSON format. 
 
 ### DELETE
 
@@ -227,6 +248,26 @@ dest_name   = TOKEN
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
+### EXPORT
+
+The method returns the specified routes.
+
+#### Parameters
+
+```
+EXPORT FROM ROUTE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified routes by JSON format. 
+
+
 #### DELETE
 
 The method removes a specified route from the local node.
@@ -265,6 +306,25 @@ formula  = TOKEN
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
+### EXPORT
+
+The method returns the specified register data.
+
+#### Parameters
+
+```
+EXPORT FROM REGISTER WHERE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified register data by JSON format. 
+
 ### DELETE
 
 The method removes a specified method from the local node.
@@ -284,10 +344,11 @@ name     = TOKEN
 ##### Parameters
 
 ```
-EXPORT CONFIG
+EXPORT FROM CONFIG
 ```
 
 ##### Return values
 
 The method returns the current all configuration properties.
+
 Please see [Configuration](configuration.md) to know the format in more detail.
