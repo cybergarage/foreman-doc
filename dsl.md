@@ -14,25 +14,26 @@ FQL supports the following queries.
 | --- | --- | --- |
 | Metrics | SET | Insert a new metrics |
 | | SELECT | Get the specified metrics data |
+| | ANALYZE | Analyze the specified metrics data |
 | | - | - |
 | QoS | SET | Set a new QoS formula |
+| | EXPORT | Get the specified QoS formula |
 | | DELETE | Delete the specified QoS formula |
 | | - | - |
-| Action | SET | Set a new script action |
+| Action | SET | Set a new action |
+| | EXPORT | Get the specified action data |
 | | DELETE | Delete the specified action |
+| | EXECUTE | Execute the specified action |
 | | - | - |
 | Route | SET | Set a new route |
+| | EXPORT | Get the specified route data |
 | | DELETE | Delete the specified route |
 | | - | - |
 | Register | SET | Set a new register data |
-| | SELECT | Get the specified register data |
+| | EXPORT | Get the specified register data |
 | | DELETE | Delete the specified register data |
 | | - | - |
-| Failure Analysis | ANALYZE | Analyze the specified metrics |
-| | - | - |
-| Prediction Analysis | ANALYZE | Analyze the specified metrics |
-| | - | - |
-| Configuration | Export | Export the current all configuration |
+| Configuration | EXPORT | Export the current all configuration |
 | | - | - |
 
 ## Metrics
@@ -87,6 +88,27 @@ Otherwise, the metrics response are the following JSON response format when the 
 - [Graphite : HTTP API](http://graphite-api.readthedocs.io/en/latest/api.html)
   - `/metrics/index.json`
 
+### ANALYZE
+
+The method returns time series related metrics with the specified target for any purposes such as root cause analysis of failures.
+
+##### Parameters
+
+```
+ANALYZE target FROM METRICS WHERE conditions
+
+target      = TOKEN
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
+```
+
+#### Return values
+
+The method returns the analyze result by JSON format. 
+
+
 ## QoS
 
 ### SET
@@ -105,6 +127,25 @@ formula  = CNF
 #### Return values
                      
 The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### EXPORT
+
+The method returns the specified QoS formulas.
+
+#### Parameters
+
+```
+EXPORT FROM QOS WHERE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified QoS formulas by JSON format. 
 
 ### DELETE
 
@@ -149,6 +190,25 @@ supported-language = ("js" | "java" | "tcl" | "lua" | "python")
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
+### EXPORT
+
+The method returns the specified action data.
+
+#### Parameters
+
+```
+EXPORT FROM ACTION WHERE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified actions by JSON format. 
+
 ### DELETE
 
 The remove_method method removes a specified method.
@@ -167,6 +227,26 @@ operand    = TOKEN
 ##### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### EXECUTE
+
+The method execute a registered method with the specified parameters.
+
+#### Parameters
+
+```
+EXECUTE method_name (param_names)? (VALUES param_values)?
+
+method_name   = TOKEN
+param_names  = '(' param_name? (',' param_name)* ')'
+param_name   = TOKEN
+param_values = '(' param_value? (',' param_value)* ')'
+param_value = TOKEN
+```
+
+#### Return values
+
+The method returns the execution result by JSON format. 
 
 ## Route
 
@@ -187,6 +267,26 @@ dest_name   = TOKEN
 ##### Return values
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
+
+### EXPORT
+
+The method returns the specified routes.
+
+#### Parameters
+
+```
+EXPORT FROM ROUTE (WHERE condition)?
+
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
+```
+
+#### Return values
+
+The method returns the specified routes by JSON format. 
+
 
 #### DELETE
 
@@ -226,75 +326,36 @@ data  = TOKEN
 
 The method doesn't return anything when the method is success, otherwise returns an error object.
 
-### SELECT
+### EXPORT
 
 The method returns the specified register data.
 
 #### Parameters
 
 ```
-SELECT FROM REGISTER WHERE condition
+EXPORT FROM REGISTER WHERE (WHERE condition)?
 
-condition  = 'name' '==' <name>
-name         = TOKEN
+condition  = column operator operand
+column    = 'name'
+operator   = '=='
+operand    = TOKEN
 ```
 
 #### Return values
 
-The method returns the specified register data by JSON format.
+The method returns the specified register data by JSON format. 
 
 ### DELETE
 
-The method removes the specified register.
+The method removes a specified method from the local node.
 
 #### Parameters
 
 ```
-DELETE FROM REGISTER WHERE condition
+DELETE name FROM REGISTER
 
-condition  = 'name' '==' <name>
-name         = TOKEN
+name     = TOKEN
 ```
-
-##### Return values
-
-The method doesn't return anything when the method is success, otherwise returns an error object.
-
-## Failure Analysis
-
-### ANALYZE
-
-The method returns time series related metrics with the specified target for any purposes such as root cause analysis of failures.
-
-##### Parameters
-
-```
-ANALYZE CORRELATION target 
-
-target      = TOKEN
-```
-
-##### Return values
-
-<TBD>
-
-## Prediction Analysis
-
-### ANALYZE
-
-The method returns time series prediction metrics with the specified target for any purposes such as ....
-
-##### Parameters
-
-```
-ANALYZE PREDICTION target 
-
-target      = TOKEN
-```
-
-##### Return values
-
-<TBD>
 
 ## Configuration
 
@@ -303,10 +364,11 @@ target      = TOKEN
 ##### Parameters
 
 ```
-EXPORT CONFIG
+EXPORT FROM CONFIG
 ```
 
 ##### Return values
 
 The method returns the current all configuration properties.
+
 Please see [Configuration](configuration.md) to know the format in more detail.
