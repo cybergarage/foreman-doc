@@ -1,0 +1,69 @@
+graph foreman_concept {
+	subgraph cluster_foreman {
+		label="Foreman";
+
+	subgraph cluster_kb {
+		shape = circle;
+		label="Knowlege Base";
+
+		qos [
+			shape = box,
+			label="QoS"
+		];
+
+		act [
+			shape = box,
+			label="Action"
+		];
+
+	}
+
+	subgraph cluster_mem {
+		label="Memory";
+
+
+		mon [
+			shape = box,
+			label="Monitoring"
+		];
+	}
+
+
+	subgraph cluster_think {
+
+		label="Thinking";
+		res [
+			shape = box,
+			label="Reasoning"
+		];
+
+	}
+
+	}
+
+	subgraph cluster_outer {
+		label="Foreman";
+
+		user [
+			shape = box,
+			label="Reasoning"
+		];
+
+		system [
+			shape = box,
+			label="Reasoning"
+		];
+	}
+
+
+	mon--qos;
+	qos--act;
+	act--res;
+
+	user--qos;
+	system--mon;
+	act--system;
+	act--user;
+
+	res--qos;
+}
