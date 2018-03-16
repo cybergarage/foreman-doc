@@ -6,6 +6,13 @@ Foreman supports a domain specific language, Foreman Query Language (FQL), to ex
 
 The operator can post the FQL query to the HTTP interface using GET or POST methods.
 
+## Command Line Tool
+
+`foreman-py` is a client package for Foreman, and it has a command line tool, [`fql`](./doc/fql.md), which can execute FQL easily. Please check the following document to know the tool in more detail.
+
+- [`foreman-py`](https://github.com/cybergarage/foreman-py)
+  - [fql - The Foreman Command Line Tool](https://github.com/cybergarage/foreman-py/blob/master/doc/fql.md)
+
 ## Overview
 
 FQL supports the following queries.
@@ -33,7 +40,7 @@ FQL supports the following queries.
 | | EXPORT | Get the specified register data |
 | | DELETE | Delete the specified register data |
 | | - | - |
-| Configuration | EXPORT | Export the current all configuration |
+| Configuration | Export | Export the current all configuration |
 | | - | - |
 
 ## Metrics
@@ -90,24 +97,22 @@ Otherwise, the metrics response are the following JSON response format when the 
 
 ### ANALYZE
 
-The method returns time series related metrics with the specified target for any purposes such as root cause analysis of failures.
+The method analyzes the specifid metrics, and it returns the analysys result by JSON format.
 
-##### Parameters
+#### Parameters
 
 ```
-ANALYZE target FROM METRICS WHERE conditions
+ANALYZE METRICS (WHERE condition)?
 
-target      = TOKEN
-conditions = condition (AND condition)*
-condition  = operand operator operand
+targets    = ('*' | '(' target (',' target)* ')')
+target     = 
+condition  = 'name' '==' operand
 operand    = TOKEN
-operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 #### Return values
 
-The method returns the analyze result by JSON format. 
-
+The method returns the analysis result by JSON format.
 
 ## QoS
 
@@ -356,6 +361,9 @@ DELETE name FROM REGISTER
 
 name     = TOKEN
 ```
+##### Return values
+
+The method doesn't return anything when the method is success, otherwise returns an error object.
 
 ## Configuration
 
