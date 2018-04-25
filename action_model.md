@@ -92,6 +92,32 @@ However, you don't have to return the success objects expressly because all Pyth
 
 The action method should return an error object when it is not executed normally. The action manager translates the error object to a string, set the string as the detail error message.
 
+### LUA
+
+For LUA, the action method specification is bellow.
+
+```
+function <method_name>(params)
+    return (true || false), results
+end
+```
+
+#### Arguments
+
+| Name | Direction | Type | Description |
+| --- | --- | --- | --- |
+| params | IN | Table | Tableof input parameters for the action |
+| results | OUT | Table | - |
+
+#### Return value
+
+The action method should return two resutls, `true` or `false` with the table results when it is executed normally. 
+
+### Shell
+
+For LUA, the action method has no input parameter, the action code is executed directly.
+
+
 ## Event
 
 ### QoS
