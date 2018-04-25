@@ -60,7 +60,7 @@ The interface of the action function is specified as the following.
 
 ### Parameter Data Types
 
-| Foreman Type | Go | C++  | Python | LUA | Shell
+| Foreman Type | Go | C++  | Python | LUA | Shell |
 | --- | --- | --- | --- | --- |
 | Integer | Int64 | long | long | - |
 | Real | float64 | double | float | - |
