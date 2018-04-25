@@ -58,6 +58,8 @@ The interface of the action function is specified as the following.
 | Response Paramaters | map<string, object> | |
 | Error | error | |
 
+However, the shell has support only the method name and request resut.
+
 ### Parameter Data Types
 
 | Foreman Type | Go | C++  | Python | LUA | Shell |
