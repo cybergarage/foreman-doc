@@ -39,7 +39,16 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 
 ## Supported Programming Languages
 
+Foreman support the following programing languages to write action codes.
+
+- Python
+- LUA
+- System (Shell Command)
+
+
 ### Action Specificcation
+
+The interface of the action function is specified as the following. 
 
 | Item | Type | Description |
 | --- | --- | --- |
@@ -51,12 +60,12 @@ Foreman supports dataflow programming as reactive programming to execute a compl
 
 ### Parameter Data Types
 
-| Foreman Type | C++ | Go | Python |
-| --- | --- | --- | --- |
-| Integer | long | Int64 | long |
-| Real | double | float64 | float |
-| String | string | string | string |
-| Bool | bool | bool | bool |
+| Foreman Type | Go | C++  | Python | LUA | Shell
+| --- | --- | --- | --- | --- |
+| Integer | Int64 | long | long | - |
+| Real | float64 | double | float | - |
+| String | string | string | string | - |
+| Bool | bool | bool | bool | - |
 
 ### Python
 
