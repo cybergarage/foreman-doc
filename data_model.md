@@ -14,6 +14,14 @@ No | Name | Database Type | Distributed Type | Store Data
 2 | Register Store | Key-Value Store | Standalone | Metric (Only Latest), User-Data
 3 | Registry Store | Hierarchical Database | Shared | QoS, Action, Configuration
 
+The metrics store is a federated time-series database which stores monitoring metrics in the same local node. 
+Each instance knows which metrics data are stored in which instance in the cluster, these behave as a federated database. For example, when the operator requests all metrics data in the cluster to an instance, the instance gathers all metrics data from other ones and returns it.
+
+The register store is a shared hierarchical database which stores a common data such as the knowledge for autonomous recovery and the configurations in the cluster, and all instances have a same shared data. For example, an instance updates its data, and the data is distributed to other instances immediately.
+
+The metrics store is 
+![federated](./img/federated.png)
+
 ## Metric Store
 
 Foreman has an abstracted metric store to store time-series metrics data such as monitoring data. The store is a simple matrix time-series database as the following.
