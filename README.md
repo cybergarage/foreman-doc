@@ -9,6 +9,7 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 - [QoS Model](qos_model.md)
 - [Programming Model](programming_model.md)
 - [Data Model](data_model.md)
+- [Comparison](comparison.md)
 
 ## Specification
 
