@@ -2,10 +2,17 @@
 
 # Data Model
 
-Foreman has three abstracted data models, the register store, registry store and metric store, internally. 
-The metric store is used to store time-series metrics data such as monitoring data, and the register store is a simple volatile key-value store to store temporary data such as latest metric values and user-defined aggregated values. The registry store is a non-volatile hierarchical data store to store any metadata such as the configuration settings.
+Foreman has three abstracted data models, the metric store, register store and registry store, internally. 
 
 ![logo](./img/foreman_datamodel.png)
+
+The metric store is used to store time-series metrics data such as monitoring data, and the register store is a simple volatile key-value store to store temporary data such as latest metric values and user-defined aggregated values. The registry store is a non-volatile hierarchical data store to store any metadata such as the configuration settings.
+
+No | Name | Database Type | Distributed Type | Store Data
+--- | --- | --- | --- | ---
+1 | Metric Store | Time-Series Database | Federated  | Metrics (Time-Series)
+2 | Register Store | Key-Value Store | Standalone | Metric (Only Latest), User-Data
+3 | Registry Store | Hierarchical Database | Shared | QoS, Action, Configuration
 
 ## Metric Store
 
