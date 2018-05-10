@@ -8,11 +8,11 @@ Foreman has three abstracted data models, the metric store, register store and r
 
 The metric store is used to store time-series metrics data such as monitoring data, and the register store is a simple volatile key-value store to store temporary data such as latest metric values and user-defined aggregated values. The registry store is a non-volatile hierarchical data store to store any metadata such as the configuration settings.
 
-No | Name | Database Type | Distributed Type | Store Data
---- | --- | --- | --- | ---
-1 | Metric Store | Time-Series Database | Federated  | Metrics (Time-Series)
-2 | Register Store | Key-Value Store | Standalone | Metric (Only Latest), User-Data
-3 | Registry Store | Hierarchical Database | Shared | QoS, Action, Configuration
+No | Name | Database Type | Distributed Type | Target Data | User Data |
+--- | --- | --- | --- | --- | ---
+1 | Metric Store | Time-Series Database | Federated  | Metrics (Time-Series) | X
+2 | Register Store | Key-Value Store | Standalone | Metric (Only Latest) | O
+3 | Registry Store | Hierarchical Database | Shared | QoS, Action, Configuration | X
 
 The metrics store is a federated time-series database which stores monitoring metrics in the same local node. 
 Each instance knows which metrics data are stored in which instance in the cluster, these behave as a federated database. For example, when the operator requests all metrics data in the cluster to an instance, the instance gathers all metrics data from other ones and returns it.
