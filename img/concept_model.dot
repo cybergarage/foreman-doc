@@ -1,69 +1,40 @@
 graph foreman_concept {
-	subgraph cluster_foreman {
-		label="Foreman";
+	ds [
+		shape = "box",
+		label="Data Source"
+	];
 
-	subgraph cluster_kb {
-		shape = circle;
-		label="Knowlege Base";
-
-		qos [
-			shape = box,
-			label="QoS"
-		];
-
-		act [
-			shape = box,
-			label="Action"
-		];
-
-	}
-
-	subgraph cluster_mem {
-		label="Memory";
+	user [
+		shape = "box",
+		label="User"
+	];
 
 
-		mon [
-			shape = box,
-			label="Monitoring"
-		];
-	}
+	tsdb [
+		shape = "ellipse",
+		label="Metrics Manager"
+	];
 
+	qos [
+		shape = "ellipse",
+		label="QoS Manager"
+	];
 
-	subgraph cluster_think {
+	action [
+		shape = "ellipse",
+		label="Action Manager"
+	];
 
-		label="Thinking";
-		res [
-			shape = box,
-			label="Reasoning"
-		];
+	reasoing [
+		shape = "ellipse",
+		label="Resoning Manager"
+	];
 
-	}
+	ds -- tsdb;
+	user -- qos;
 
-	}
-
-	subgraph cluster_outer {
-		label="Foreman";
-
-		user [
-			shape = box,
-			label="Reasoning"
-		];
-
-		system [
-			shape = box,
-			label="Reasoning"
-		];
-	}
-
-
-	mon--qos;
-	qos--act;
-	act--res;
-
-	user--qos;
-	system--mon;
-	act--system;
-	act--user;
-
-	res--qos;
+	tsdb -- qos;
+	qos -- action;
+	qos -- reasoing;
+	reasoing -- qos;
 }
