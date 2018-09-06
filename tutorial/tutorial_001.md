@@ -4,7 +4,7 @@
 
 ## Foreman Query Language (FQL)
 
-Foremanは、操作言語として[Foreman Query Language (FQL)](../dsl.md)と呼ばれるSQLライクな独自言語をサポートしています。仕様の詳細については、[Foreman Query Language (FQL)](../dsl.md)を参照して下さい。
+Foremanは、操作言語として[Foreman Query Language (FQL)](../dsl.md)と呼ばれるSQLライクな独自言語をサポートしています。仕様の詳細については、[こちらの資料](../dsl.md)を参照して下さい。
 
 ## FQLクライアント - fql
 
