@@ -24,7 +24,7 @@ Foreman consider that the user specify their QoS only `QPm` and they doesn’t s
 
 ## QoS Formula
 
-`Q` is defined the combination of process metrics in Pm which are related to SLA directly, and the each literal can be specified a condition that is true. The combination is represented as an ANF, Algebraic Normal Form.
+`Q` is defined the combination of process metrics in Pm which are related to QoS directly, and the each literal can be specified a condition that is true. The combination is represented as an ANF, Algebraic Normal Form.
 For example, a QoS is defined as the following:
 
 ```
@@ -35,7 +35,7 @@ Then the first specified ANF is modified and optimized using the other concerned
 
 ## QoS EBNF
 
-Currently, QoS should be specified by DNF, Disjunctive normal form.
+Currently, QoS should be specified by DNF (Disjunctive normal form) as the following EBNF.
 
 ```
 qos :=　"(" clause ("&" clause)* ")"
