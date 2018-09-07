@@ -27,3 +27,7 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 
 - [Developers Guide](developer.md)
 - [Inside Foreman](developer_inside.md)
+
+## References
+
+- [References](references.md)
