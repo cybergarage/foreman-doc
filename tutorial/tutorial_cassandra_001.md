@@ -27,5 +27,3 @@ SET (qos_route, qos_sstables, sstables_compaction) INTO ROUTE
 以下に、この監視ルールを設定した際の、SSTableファイル数統計値の数意を示します。ルール設定前は統計値が8を超え読み込み遅延が発生していましたが、このルールの設定による適切な閾値で、読み込み遅延を保証されています。
 
 ![tutorial_cassandra_001-001.png](img/tutorial_cassandra_001-001.png)
-
-

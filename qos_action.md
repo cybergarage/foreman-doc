@@ -1,52 +1,14 @@
 ![logo](./img/icon.png)
 
-# Action Model
+# QoS Acttion
 
-## Execution Model
-
-![route](./img/programming_model.png)
-
-### Method
-
-Foreman enables to build monitoring actions to define the small methods using any programming languages and connect between the methods like pipeline of Unix.
-
-### Route
-
-Foreman supports dataflow programming as reactive programming to execute a complex DAG (directed acyclic graph). In Foreman, the dataflow function is called as ’route’.
-
-![route](./img/programming_model_route.png)
-
-## QoS JSON Format
-
-```
-[
-  [
-    {
-      "param " : ...,
-      "op" : ...,
-      "threshold" : ...,
-      "current" : ...,
-    },
-    {
-      ....
-    }
-  ],
-  [
-    ....
-  ]
-]
-```
-
-## Supported Programming Languages
-
-Foreman support the following programing languages to write action codes.
+The action is a programming code for autonomous recovery. Foreman defines the abstract interface, and so the operator can write the action using the following dynamic programming languages.
 
 - Python
 - LUA
 - System (Shell Command)
 
-
-### Action Specificcation
+## Action Function
 
 The interface of the action function is specified as the following. 
 
@@ -60,7 +22,7 @@ The interface of the action function is specified as the following.
 
 However, the shell has support only the method name and request resut.
 
-### Parameter Data Types
+## Parameter Data Types
 
 | Foreman Type | Go | C++  | Python | LUA | Shell |
 | --- | --- | --- | --- | --- | --- |
@@ -68,6 +30,8 @@ However, the shell has support only the method name and request resut.
 | Real | float64 | double | float | - | - |
 | String | string | string | string | - | - |
 | Bool | bool | bool | bool | - | - |
+
+## Supported Programming Languages
 
 ### Python
 
@@ -116,17 +80,3 @@ The action method should return two resutls, `true` or `false` with the table re
 ### Shell
 
 For LUA, the action method has no input parameter, the action code is executed directly.
-
-
-## Event
-
-### QoS
-
-When the QoS manager detects a Qos which is not satisfied, it sends a following event to the specified action method which is a connected with the QoS by the route. 
-
-| Argument | Direction | Type | Description |
-| --- | --- | --- | --- |
-| qos | IN | QoS |
-| - | OUT | - | - |
-
-Currently, Foreman doesn't handle any responses, and so the action method should not return any parameters.
