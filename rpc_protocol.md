@@ -4,7 +4,9 @@
 
 Foreman offers the following RPC (Remote Procedure Call) protocol to execute FQL, [Foreman Query Language](dsl.md), over HTTP.
 
-## Query
+## The Query API
+
+`foreman` provies a `/fql` endpoint for quering any [Foreman Query Language](dsl.md) commands.
 
 ```
 http://<host>:<rpc port>/fql?q=<query>
@@ -12,10 +14,11 @@ http://<host>:<rpc port>/fql?q=<query>
 
 ### Response
 
+`foreman` returns a good HTTP status code (200) with the JSON response when the request is executed normally, otherwise a bad HTTP status code with an error JSON response. See [Foreman Query Language](dsl.md) to know the JSON responses in more detail. 
 
+## Configuration API
 
-
-## Configuration
+`foreman` provies a `/fql` endpoint for quering the node infomation easily.
 
 ```
 http://<host>:<rpc port>/
