@@ -18,7 +18,7 @@ http://<host>:<rpc port>/fql?q=<query>
 
 ## Configuration API
 
-`foreman` provies a `/fql` endpoint for quering the node infomation easily.
+`foreman` provies a `/` endpoint for quering the node infomation easily.
 
 ```
 http://<host>:<rpc port>/
