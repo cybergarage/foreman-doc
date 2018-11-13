@@ -4,6 +4,17 @@
 
 Foreman offers the following RPC (Remote Procedure Call) protocol to execute FQL, [Foreman Query Language](dsl.md), over HTTP.
 
+## Query
+
+```
+http://<host>:<rpc port>/fql?q=<query>
+```
+
+### Response
+
+
+
+
 ## Configuration
 
 ```
@@ -11,6 +22,8 @@ http://<host>:<rpc port>/
 ```
 
 ### Response 
+
+`foreman` returns the following configuration response which includes current running settings of the node.
 
 ```
 {
@@ -26,11 +39,3 @@ http://<host>:<rpc port>/
   }
 }
 ```
-
-## Query
-
-```
-http://<host>:<rpc port>/fql?q=<query>
-```
-
-### Response
