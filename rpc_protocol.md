@@ -16,7 +16,7 @@ http://<host>:<rpc port>/fql?q=<query>
 
 `foreman` returns a good HTTP status code (200) with the JSON response when the request is executed normally, otherwise a bad HTTP status code with an error JSON response. See [Foreman Query Language](dsl.md) to know the JSON responses in more detail. 
 
-## Configuration API
+## The Configuration API
 
 `foreman` provies a `/` endpoint for quering the node infomation easily.
 
