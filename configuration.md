@@ -23,6 +23,8 @@ RETURN VALUE
   Return EXIT_SUCCESS or EXIT_FAILURE
 ```
 
+See [foremand.go](https://github.com/cybergarage/foreman-go/blob/master/foremand/foremand.go) in [foreman-go](https://github.com/cybergarage/foreman-go/) directly to know the latest specification.
+
 ## Configuration Properties
 
 `foremand` can specify a configuration file based on [TOML](TOML specification) format as the following.
@@ -49,4 +51,4 @@ Interval = 300
 Period = 3600
 ```
 
-See [foremand.conf](https://github.com/cybergarage/foreman-go/blob/master/debian/foremand.conf) in [foreman-go](https://github.com/cybergarage/foreman-go/blob/master/debian/foremand.conf) directly to know the latest specification.
+See [foremand.conf](https://github.com/cybergarage/foreman-go/blob/master/debian/foremand.conf) in [foreman-go](https://github.com/cybergarage/foreman-go/) directly to know the latest specification.
