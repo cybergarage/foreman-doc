@@ -13,7 +13,18 @@ http://<host>:<rpc port>/
 ### Response 
 
 ```
-{"config":{"boostrap":0,"carbon_port":2003,"host":"localhost","http_port":8188,"log_level":"TRACE","metrics_store":"sqlstore/0.8.6","product":"foreman","version":"0.8.5"}}
+{
+  "config":{
+    "boostrap":0,
+    "carbon_port":2003,
+    "host":"localhost",
+    "http_port":8188, 
+    "log_level":"TRACE",
+    "metrics_store":"sqlstore/0.8.6",
+    "product":"foreman",
+    "version":"0.8.5"
+  }
+}
 ```
 
 ## Query
