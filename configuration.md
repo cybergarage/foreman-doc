@@ -2,37 +2,53 @@
 
 # Configuration
 
-`foremand.toml` is a main configuration file of Foreman.
+`foremand.toml` is a main configuration file for `foremand`.
 
-## Properties
+## Command Line Options
 
-### Server
+```
+foremand is a deamon command of Forman.
 
-| Section | Property | Type | Description |
-| --- | --- | --- | --- |
-| server | http_port | Integer | |
-| | carbon_port | Integer | |
+	NAME
+	foremand
 
-### QoS
+	SYNOPSIS
+	foremand [OPTIONS]
 
-| Section | Sub Section | Property | Type | Description |
-| --- | --- | --- | --- | --- |
-| qoses | qos | name | String | |
-| | | formula | String | |
+	DESCRIPTION
+	foremand is a deamon process to Foreman.
 
-### Action
+	Logs to stdout by default, can be changed in the config file.
 
-| Section | Sub Section | Property | Type | Description |
-| --- | --- | --- | --- | --- |
-| actions | action | name | String | |
-| | | language | String | python |
-| | | encoding | String | |
-| | | code | String | |
+	OPTIONS
+	-config : Path to a configuration file.
+	-query  : Path to a query file.
+	-v      : Enable verbose output.
 
-### Route
+	RETURN VALUE
+	  Return EXIT_SUCCESS or EXIT_FAILURE
+```
 
-| Section | Sub Section | Property | Type | Description |
-| --- | --- | --- | --- | --- |
-| routes | route | name | String | |
-| | | src | String | |
-| | | dest | String | |
+## Configuration Properties
+
+```
+[Log]
+file = "/var/log/foreman/foremand.log"
+level = "INFO"
+
+[Server]
+Cluster = "foreman"
+Host = "localhost"
+HTTPPort = 8188
+CarbonPort = 2003
+Finder = "echonet"
+
+[FQL]
+#Path = "/fql"
+#Query = "q"
+
+[Metrics]
+Store = "sqlite"
+Interval = 300
+Period = 3600
+```
