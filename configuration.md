@@ -27,7 +27,7 @@ See [foremand.go](https://github.com/cybergarage/foreman-go/blob/master/foremand
 
 ## Configuration Properties
 
-`foremand` can specify a configuration file based on [TOML](TOML specification) format as the following.
+`foremand` can specify a configuration file based on [TOML](https://github.com/toml-lang/toml) format as the following.
 
 ```
 [Log]
