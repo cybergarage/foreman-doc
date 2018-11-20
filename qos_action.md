@@ -80,4 +80,4 @@ The action method should return two resutls, `true` or `false` with the table re
 ### Shell
 
 The action is executed as a system command in the shell.
-The action method has no input parameter, the action code is executed directly.
+The action method has no input parameter, the action code is executed directly without the parameters.
