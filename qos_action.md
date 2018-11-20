@@ -1,6 +1,6 @@
 ![logo](./img/icon.png)
 
-# QoS Acttion
+# QoS Action
 
 The action is a programming code for autonomous recovery. Foreman defines the abstract interface, and so the operator can write the action using the following dynamic programming languages.
 
