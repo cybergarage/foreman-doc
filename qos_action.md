@@ -79,4 +79,5 @@ The action method should return two resutls, `true` or `false` with the table re
 
 ### Shell
 
-For LUA, the action method has no input parameter, the action code is executed directly.
+The action is executed as a system command in the shell.
+The action method has no input parameter, the action code is executed directly.
