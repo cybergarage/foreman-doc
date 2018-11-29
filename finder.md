@@ -44,7 +44,4 @@ NOTE : In additiation to the above static finder, Foreman support the finder as 
 
 The finder defines a finder using general directory services such as [etcd](https://coreos.com/etcd/), [Consul](https://www.consul.io) and [Zookeeper](https://zookeeper.apache.org) .....
 
-
 NOTE : Foreman will support the function in the feature, but it is not implemented yet.
-
-
