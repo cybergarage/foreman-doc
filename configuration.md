@@ -51,7 +51,7 @@ Interval = 300
 Period = 3600
 
 [Bootstrap]
-query = <filename> <directory name> 
+query = <filename> | <directory name> 
 ```
 
 See [foremand.conf](https://github.com/cybergarage/foreman-go/blob/master/debian/foremand.conf) in [foreman-go](https://github.com/cybergarage/foreman-go/) directly to know the latest specification.
