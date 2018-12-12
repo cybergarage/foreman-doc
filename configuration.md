@@ -51,14 +51,14 @@ Interval = 300
 Period = 3600
 
 [Bootstrap]
-action = <filename> <directory name> 
+query = <filename> <directory name> 
 ```
 
 See [foremand.conf](https://github.com/cybergarage/foreman-go/blob/master/debian/foremand.conf) in [foreman-go](https://github.com/cybergarage/foreman-go/) directly to know the latest specification.
 
 ### Bootstrap
 
-#### action
+#### query
 
 The specfied file name or directory name are loaded after the `foremand` is started or restarted.
 The specified file must include only [FQL](dsl.md) strings each line, and `foremand` executes all queries before the node is activated. 
