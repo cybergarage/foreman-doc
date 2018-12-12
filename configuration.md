@@ -62,4 +62,4 @@ See [foremand.conf](https://github.com/cybergarage/foreman-go/blob/master/debian
 
 The specfied file name or directory name are loaded after the `foremand` is started or restarted.
 The specified file must include only [FQL](dsl.md) strings each line, and `foremand` executes all queries before the node is activated. 
-If a directory is specified for the field, `foremand` search the files whose extension is `fql` in the directory and load the found query files all.
+If a directory is specified for the field, `foremand` search the files whose extension are `*.fql` in the directory and load the found query files all.
