@@ -8,7 +8,7 @@ This diagram illustrates the core architecture of Foreman, and the core componen
 
 ### Federated database
 
-A federated database system is a type of database system, which consists of multiple autonomous database systems into a single federated database. Foreman is the primitive database; the operator can define a federated database system which consists of multiple Foremans.
+A federated database system is a type of database system, which consists of multiple autonomous database systems into a single federated database. Foreman is the primitive database; the operator can define a federated database system which consists of multiple Foreman nodes.
 
 The interface of the time series database is abstracted for the federated database. Through the interface abstraction, the consumer and the provider can access the federated database system with a uniform method.
 

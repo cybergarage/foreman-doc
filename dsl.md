@@ -176,7 +176,7 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ### SET
 
-The method sets a new method into the local node.
+The method sets a new method into the local node. See [Action](./action.md) to define the actions using the supported programming languages.
 
 #### Parameters
 
