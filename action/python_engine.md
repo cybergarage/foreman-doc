@@ -52,7 +52,7 @@ The following code shows how to use the `execute_query` function.
 ```
 import foreman
 jsonRes = foreman.execute_query("EXPORT FROM CONFIG")
-if jsonRes is not {
+if jsonRes is not None {
   .....
 }
 ```
@@ -83,7 +83,7 @@ The following code shows how to use the `post_query` function.
 ```
 import foreman
 jsonRes = foreman.post_query("localhost", 8188, "EXPORT FROM CONFIG")
-if jsonRes is not {
+if jsonRes is not None {
   .....
 }
 ```
