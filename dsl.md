@@ -42,6 +42,8 @@ FQL supports the following queries.
 | | - | - |
 | Configuration | Export | Export the current all configuration |
 | | - | - |
+| Finder| Export | Export the found node in the same cluster |
+| | - | - |
 
 ## Metrics
 
@@ -380,3 +382,19 @@ EXPORT FROM CONFIG
 The method returns the current all configuration properties.
 
 Please see [Configuration](configuration.md) to know the format in more detail.
+
+## FINDER
+
+The finder is a core function which discovers other nodes to construct the abstract cluster network on the physical network environment. Please see [Finder](finder.md) to know the function in more detail.
+
+### EXPORT
+
+##### Parameters
+
+```
+EXPORT FROM FINDER
+```
+
+##### Return values
+
+The method returns the all found node in the same cluster of the local node.
