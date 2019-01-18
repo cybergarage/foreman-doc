@@ -24,7 +24,14 @@ The Foreman sends an event which is called as `trigger` which the local status i
 
 ![route](img/programming_model_trigger.png)
 
-Currently, Foreman supports two trigger types, a QoS and an execute trigger. The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. The action manager generates the trigger event when the action is executed directly using [FQL](dsl.md).
+Currently, Foreman supports two trigger types, a QoS and an execute trigger. 
+
+
+The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. 
+
+#### Execute Trigger
+
+The action manager generates the trigger event when the action is executed directly using [FQL](dsl.md).
 
 ### Programming Languages 
 
