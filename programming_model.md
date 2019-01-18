@@ -32,7 +32,7 @@ The QoS manager generates the trigger event when the specified QoS formula in th
 
 #### Execute Trigger
 
-The action manager generates the trigger event when the action is executed directly using [FQL](dsl.md).
+The action manager generates the trigger event when the action is executed directly using a `EXECUTE` command in [FQL](dsl.md).  See [FQL](dsl.md) to know the execute command in more detail.
 
 ### Programming Languages 
 
