@@ -28,7 +28,7 @@ Currently, Foreman supports two trigger types, a QoS and an execute trigger.
 
 #### QoS Trigger
 
-The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. See [QoS Model](qos_model.md) to know the specification in more detail.
+The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. See the following section about the QoS manager or [QoS Model](qos_model.md) directly to know the specification in more detail.
 
 #### Execute Trigger
 
