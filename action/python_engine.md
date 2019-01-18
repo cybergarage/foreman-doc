@@ -10,7 +10,7 @@ def <function_name>(params,results):
 	return <True or False>
 ````
 
-The `params` and `results` are [dictionary object](https://docs.python.org/3.6/tutorial/datastructures.html#dictionaries) in Python. The function can get input parameters which are passed from the source object in the route from the input `params`, it should return the result to the output `results`. 
+The `params` and `results` are [dictionary objects](https://docs.python.org/3.6/tutorial/datastructures.html#dictionaries) in Python. The function can get input parameters which are passed from the source object in the route from the input `params`, it should return the result to the output `results`. 
 The function should return a `True` when it can execute the action normally, otherwise `False`.
 
 
@@ -52,7 +52,7 @@ The following code shows how to use the `execute_query` function.
 ```
 import foreman
 jsonRes = foreman.execute_query("EXPORT FROM CONFIG")
-if jsonRes is not {
+if jsonRes is not None {
   .....
 }
 ```
@@ -83,7 +83,7 @@ The following code shows how to use the `post_query` function.
 ```
 import foreman
 jsonRes = foreman.post_query("localhost", 8188, "EXPORT FROM CONFIG")
-if jsonRes is not {
+if jsonRes is not None {
   .....
 }
 ```

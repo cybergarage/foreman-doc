@@ -19,28 +19,31 @@ FQL supports the following queries.
 
 | Type | Action | Description |
 | --- | --- | --- |
-| Metrics | SET | Insert a new metrics |
-| | SELECT | Get the specified metrics data |
-| | ANALYZE | Analyze the specified metrics data |
+| Metrics | SET | Inserts a new metrics |
+| | SELECT | Gets the specified metrics data |
+| | ANALYZE | Analyzes the specified metrics data |
 | | - | - |
-| QoS | SET | Set a new QoS formula |
-| | EXPORT | Get the specified QoS formula |
-| | DELETE | Delete the specified QoS formula |
+| QoS | SET | Sets a new QoS formula |
+| | EXPORT | Gets the specified QoS formula |
+| | DELETE | Deletes the specified QoS formula |
 | | - | - |
-| Action | SET | Set a new action |
-| | EXPORT | Get the specified action data |
-| | DELETE | Delete the specified action |
-| | EXECUTE | Execute the specified action |
+| Action | SET | Sets a new action |
+| | EXPORT | Gets the specified action data |
+| | DELETE | Deletes the specified action |
+| | EXECUTE | Executes the specified action |
 | | - | - |
-| Route | SET | Set a new route |
-| | EXPORT | Get the specified route data |
-| | DELETE | Delete the specified route |
+| Route | SET | Sets a new route |
+| | EXPORT | Gets the specified route data |
+| | DELETE | Deletes the specified route |
 | | - | - |
-| Register | SET | Set a new register data |
-| | EXPORT | Get the specified register data |
-| | DELETE | Delete the specified register data |
+| Register | SET | Sets a new register data |
+| | EXPORT | Gets the specified register data |
+| | DELETE | Deletes the specified register data |
 | | - | - |
-| Configuration | Export | Export the current all configuration |
+| Configuration | Export | Exports the current all configuration |
+| | - | - |
+| Finder| Export | Exports the found node in the same cluster |
+| | Update | Updates cluster information mandatorily to execute the search function  |
 | | - | - |
 
 ## Metrics
@@ -377,6 +380,8 @@ The method doesn't return anything when the method is success, otherwise returns
 
 ### EXPORT
 
+The method exports all current configuration data.
+
 ##### Parameters
 
 ```
@@ -389,4 +394,34 @@ The method returns the current all configuration properties.
 
 Please see [Configuration](configuration.md) to know the format in more detail.
 
+## FINDER
 
+The finder is a core function which discovers other nodes to construct the abstract cluster network on the physical network environment. Please see [Finder](finder.md) to know the function in more detail.
+
+### EXPORT
+
+The method returns all found nodes in the same cluster of the local node.
+
+##### Parameters
+
+```
+EXPORT FROM FINDER
+```
+
+##### Return values
+
+The method returns the all found node in the same cluster of the local node.
+
+### UPDATE
+
+The method updates the cluster information mandatorily to execute the search function in the finder.
+
+##### Parameters
+
+```
+UPDATE FINDER
+```
+
+##### Return values
+
+The method returns the all found node in the same cluster of the local node.
