@@ -10,7 +10,7 @@ The programming model is consist of the metrics manager, the QoS manager and the
 
 ## Action Manager
 
-The action manager executes the specified method which are connected with the specified QoSs by the routes. The operator can define the action methods using some dynamic programming languages such as Python and LUA.
+The action manager executes the specified method which are connected with the specified QoS by the routes. The operator can define the action methods using some dynamic programming languages such as Python and LUA.
 
 ### Dataflow Programming
 
