@@ -20,7 +20,7 @@ Foreman supports dataflow programming as the reactive programming to define and 
 
 ### Action  
 
-The Foreman defines an abstract interface so that the operator can write the action using dynamic programming languages. The Foreman support the the following dynamic programming languages. See [Action](action.md) to know the specification in more detail.
+The Foreman defines an abstract interface for the action so that the operator can write the action using any dynamic programming languages such as Python and LUA. See [Action](action.md) to know the specification in more detail.
 
 ### Trigger
 
