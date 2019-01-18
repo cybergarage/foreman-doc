@@ -26,6 +26,7 @@ The Foreman sends an event which is called as `trigger` which the local status i
 
 Currently, Foreman supports two trigger types, a QoS and an execute trigger. 
 
+#### QoS Trigger
 
 The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. 
 
