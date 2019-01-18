@@ -18,6 +18,10 @@ Foreman supports dataflow programming as the reactive programming to define and 
 
 ![route](img/programming_model_route.png)
 
+### Action  
+
+The Foreman defines an abstract interface so that the operator can write the action using dynamic programming languages. The Foreman support the the following dynamic programming languages. See [Action](action.md) to know the specification in more detail.
+
 ### Trigger
 
 The Foreman sends an event which is called as `trigger` which the local status is changed. The operator can connect the trigger with any actions using the route.
@@ -33,11 +37,6 @@ The QoS manager generates the trigger event when the specified QoS formula in th
 #### Execute Trigger
 
 The action manager generates the trigger event when the action is executed directly using a `EXECUTE` command. See [FQL](dsl.md) to know the execute command in more detail.
-
-### Programming Languages 
-
-Foreman defines the abstract interface, and so the operator can write the action using dynamic programming languages. Foreman support the the following dynamic programming languages. See [Action](action.md) to know the specification in more detail.
-
 
 ## QoS Manager
 
