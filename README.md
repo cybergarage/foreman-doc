@@ -5,11 +5,14 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 ## Overview
 
 - [What is Foreman ?](overview.md)
-- [Architecture](architecture.md)
-- [QoS Model](qos_model.md)
 - [Programming Model](programming_model.md)
+  - [QoS Model](qos_model.md)
+  - [Action](action.md)
+    - [Python](action/python_engine.md)
+    - [System (Shell)](action/system_engine.md)- [Programming Model](programming_model.md)
 - [Data Model](data_model.md)
-- [Comparison](comparison.md)
+<!--- [Comparison](comparison.md) -->
+<!--- [Architecture](architecture.md) -->
 
 ## Getting Started
 
@@ -19,9 +22,7 @@ Foreman is an open-source framework for monitoring, analysis and alerting for cl
 
 - [Configuration](configuration.md)
 - [FQL - Foreman Query Language](dsl.md)
-  - [Action](action.md)
-    - [Python](action/python_engine.md)
-    - [System (Shell)](action/system_engine.md)
+
 - [RPC Protocol](rpc_protocol.md)
 - [Graphite Compatible Interfaces](graphite.md)
 - [Discovery Methods](finder.md)

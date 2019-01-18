@@ -1,8 +1,11 @@
 ![logo](./img/icon.png)
 
+# QoS Model
+
+The knowledge representation for QoS is a human-readable format for autonomous knowledge management. This study manages knowledge based on the rule-based system to separate the static and dynamic rules and actions, and the rules are represented as a common condition format based on Boolean logic. 
+
 ## QoS Representation
 
-The knowledge representation for QoS is a human-readable format for autonomous knowledge management. This study manages knowledge based on the rule-based system to separate the static and dynamic rules and actions, and the rules are represented as a com- mon condition format based on Boolean logic. 
 The QoS knowledge is consist of a QoS formula and the recovery actions. The recovery action is executed when the condition is satisfied. 
 The following figure shows the relationship between the conditions and the actions.
 
@@ -36,12 +39,10 @@ value := <floating_point>
 
 ## QoS Action 
 
-The action is a programming code for autonomous recovery. Foreman defines the abstract interface, and so the operator can write the action using dynamic programming languages. Foreman support the the following dynamic programming languages.
+Foreman defines the abstract interface, and so the operator can write the action using dynamic programming languages. Foreman support the the following dynamic programming languages.
 
 - Python
 - LUA
 - System (Shell Command)
 
-See the following document to know the 
-
-- [QoS Action](qos_action.md)
+See [Action](action.md) to know the specification in more detail.

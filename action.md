@@ -2,9 +2,9 @@
 
 # Action
 
-The `foreman` supports multiple script engines such as Python and LUA, and so the developer can define the action methods using your favorite programming languages.
+The `foreman` supports multiple script engines such as Python and LUA, and so the developer can define the action methods using your favorite programming languages such as Python and LUA.
 
-## Function Format
+## Action Function
 
 The `foreman` supports any programming languages to define the actions, but any actions must conform to the following function format.
 
@@ -18,21 +18,9 @@ The function can get input parameters which are passed from the source object in
 
 The function should return a `true` when it can execute the action normally, otherwise `false`.
 
-### Example
-
-The following code shows an example to define an echo action in Python.
-
-```
-def foreman_echo(params,results):
-	for key, value in params.iteritems():
-		results[key] = value
-	return True
-```
-
-The `params` and `results` are [dictionary object](https://docs.python.org/3.6/tutorial/datastructures.html#dictionaries) in Python. The function copies all items from the input `params` to the output `results` simply, and returns `True`.
-
 ## Supported Programming Languages
 
 - [Python](action/python_engine.md)
 - [System (Shell)](action/system_engine.md)
-- LUA
+- [LUA](action/system_engine.md)
+

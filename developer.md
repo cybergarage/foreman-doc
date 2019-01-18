@@ -10,7 +10,7 @@ This document aims to describe an introduction to Foreman committers and contrib
 
 ## Commit Guidelines
 
-TBD
+- TBD
 
 ## Building and Testing
 

@@ -51,15 +51,20 @@ The method is compatible with the following plaintext protocol of Graphite, it i
 
 - [Graphite : Feeding In Your Data](http://graphite.readthedocs.io/en/latest/feeding-carbon.html)
 
-  #### Parameters
+#### Parameters
 
 ```
 SET (name, value, timestamp) INTO METRICS
 
-name     = TOKEN
-value    = FLOAT
-timestamp = UNIX_TIMESTAMP
+name               = TOKEN
+value              = FLOAT
+
+timestamp          = UNIX_TIMESTAMP | sql_timestamp | 
+sql_timestamp      = 'CURRENT_TIMESTAMP'
+graphite_timestamp = ABSOLUTE_TIME | RELATIVE_TIME
 ```
+
+See [Graphite-API : HTTP API]() to know the `graphite_timestamp` specification in more detail.
 
 #### Return values
 
@@ -102,12 +107,15 @@ The method analyzes the specifid metrics, and it returns the analysys result by 
 #### Parameters
 
 ```
-ANALYZE METRICS (WHERE condition)?
+ANALYZE METRICS (WHERE conditions)?
 
 targets    = ('*' | '(' target (',' target)* ')')
 target     = 
-condition  = 'name' '==' operand
 operand    = TOKEN
+conditions = condition (AND condition)*
+condition  = operand operator operand
+operand    = TOKEN
+operator   = '<' | '>' | '<=' | '>=' | '==' | '!=' 
 ```
 
 #### Return values
@@ -118,7 +126,7 @@ The method returns the analysis result by JSON format.
 
 ### SET
 
-The method sets a new QoS formula.
+The method sets a new QoS formula using a conjunctive normal form, CNF . See [QoS Formula](qos_model.md) to know the formula format based on CNF.
 
 #### Parameters
 
@@ -159,7 +167,7 @@ The method removes a specified method.
 #### Parameters
 
 ```
-DELETE FROM QOS  (WHERE condition)?
+DELETE FROM QOS (WHERE condition)?
 
 condition  = column operator operand
 column    = 'name'
@@ -380,3 +388,5 @@ EXPORT FROM CONFIG
 The method returns the current all configuration properties.
 
 Please see [Configuration](configuration.md) to know the format in more detail.
+
+

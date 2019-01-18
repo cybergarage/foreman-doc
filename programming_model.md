@@ -2,19 +2,34 @@
 
 # Programming Model
 
-The programming model of Foreman is based on [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) like [publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) to set the failure detection and autonomous recovery functions dynamically.
+The programming model of Foreman be affected by reactive and dataflow programming  paradigms. The programming model is based on [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) like [publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) to set the failure detection and autonomous recovery functions dynamically.
 
-The programming model is consist of Foreman's metrics, rules, actions and routes as the following figure.
+The programming model is consist of the metrics manager, the QoS manager and the action manager as the following figure.
 
 ![programming_model](./img/programming_model.png)
 
-## Metrics Manager
+## Action Manager
 
-The metrics manager has a pluggable [time-series database](https://en.wikipedia.org/wiki/Time_series_database) to store metrics which are pushed from other data sources.
+The action manager executes the specified method which are connected with the specified QoSs by the routes. The operator can define the action methods using some dynamic programming languages such as Python and LUA.
 
-![metrics_datastore](./img/metrics_store.png)
+### Dataflow Programming
 
-The Foreman's database is also an [active database](https://en.wikipedia.org/wiki/Active_database), it send the latest metrics data to the subscribers when the metrics are updated.
+Foreman supports dataflow programming as the reactive programming to define and execute the complex monitoring rules. In Foreman, the dataflow function is called as `route`. Using the route function, the operator can connect the any actions like pipeline of Unix as the following
+
+![route](img/programming_model_route.png)
+
+### Trigger
+
+The Foreman sends an event which is called as `trigger` which the local status is changed. The operator can connect the trigger with any actions using the route.
+
+![route](img/programming_model_trigger.png)
+
+Currently, Foreman supports two trigger types, a QoS and an execute trigger. The QoS manager generates the trigger event when the specified QoS formula in the QoS manager is unsatisfied. The action manager generates the trigger event when the action is executed directly using [FQL](dsl.md).
+
+### Programming Languages 
+
+Foreman defines the abstract interface, and so the operator can write the action using dynamic programming languages. Foreman support the the following dynamic programming languages. See [Action](action.md) to know the specification in more detail.
+
 
 ## QoS Manager
 
@@ -30,12 +45,13 @@ The operators can specifiy any monitoring rules to the QoS manager based on ANF,
 ((Pm1 > 1.0 ∨ P m2 = 5) ∧ (Pm3 > 2.0 ∨ Pm4 <= 1))
 ```
 
-Please see [System Model](qos_model.md) to know about the system model for the QoS manager.
+Please see [QoS Model](qos_model.md) to know the specification in more detail.
 
-## Action Manager
 
-The action manager executes the specified method which are connected with the specified QoSs by the routes. The operator can define the action methods using some dynamic programming languages such as Python, JavaScript and Tcl, and Java.
+## Metrics Manager
 
-Please see the following documentation to know tha action model in more detail.
+The metrics manager has a pluggable [time-series database](https://en.wikipedia.org/wiki/Time_series_database) to store metrics which are pushed from other data sources.
 
-- [Action Model](action_model.md)
+![metrics_datastore](./img/metrics_store.png)
+
+In addition to the metrics manager, the Foreman has some databases internally. See [Data Model](data_model.md) to know the internal databases in more detail.
