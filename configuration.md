@@ -39,6 +39,7 @@ Cluster = "foreman"
 Host = "localhost"
 HTTPPort = 8188
 CarbonPort = 2003
+ConnectionTimeout = 60
 Finder = "echonet"
 
 [FQL]
