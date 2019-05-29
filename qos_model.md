@@ -32,7 +32,7 @@ Currently, QoS should be specified by DNF (Disjunctive normal form) as the follo
 qos :=　"(" clause ("&" clause)* ")"
 clause := quality ("|" quality)*
 quality := "(" var operator value ")"
-operetor := "=" | "!=" | ">" | "<" | ">=" |  "<="
+operetor := "==" | "!=" | ">" | "<" | ">=" |  "<="
 var := [a-z_-.]*
 value := <floating_point>
 ```
