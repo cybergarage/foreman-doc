@@ -26,12 +26,12 @@ Then the first specified ANF is modified and optimized using the other concerned
 
 ### QoS EBNF
 
-Currently, QoS should be specified by CNF (Conjunctive normal form) as the following EBNF.
+Currently, QoS should be specified by DNF (Disjunctive normal form) as the following EBNF.
 
 ```
-qos :=　"(" clause ("&" clause)* ")"
-clause := quality ("|" quality)*
-quality := "(" operand operator operand ")"
+qos :=　"(" clause ("|" clause)* ")"
+clause := formula ("&" formula)*
+formula := "(" operand operator operand ")"
 operetor := "==" | "!=" | ">" | "<" | ">=" |  "<="
 operand := var | value
 var := [a-zA-Z0-9_\-.*]+
