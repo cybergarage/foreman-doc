@@ -15,7 +15,7 @@ All conditions and actions have their unique names, and the observers can set th
 
 ## QoS Formula
 
-`Q` is defined the combination of process metrics in m which are related to QoS directly, and the each literal can be specified a condition that is true. The combination is represented as an ANF, Algebraic Normal Form.
+The QoS is defined the combination of process metrics in m which are related to QoS directly, and the each literal can be specified a condition that is true. The combination is represented as an ANF, Algebraic Normal Form.
 For example, a QoS is defined as the following:
 
 ```
