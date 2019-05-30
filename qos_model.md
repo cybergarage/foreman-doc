@@ -34,8 +34,8 @@ clause := quality ("|" quality)*
 quality := "(" operand operator operand ")"
 operetor := "==" | "!=" | ">" | "<" | ">=" |  "<="
 operand := var | value
-var := [a-z_-.]*
-value := <floating_point>
+var := [a-zA-Z0-9_\-.*]+
+value := <integer> | <floating_point>
 ```
 
 ## QoS Action 
