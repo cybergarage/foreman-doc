@@ -19,7 +19,7 @@ The QoS is defined the combination of process metrics in m which are related to 
 For example, a QoS is defined as the following:
 
 ```
-((m1 > 1.0) | ((m2 = 5)) & ((m3 > 2.0) | (ABS(m4) <= 1))
+((m1 > 1.0) | ((m2 == 5)) & ((m3 > 2.0) | (ABS(m4) <= 1))
 ```
 
 Then the first specified ANF is modified and optimized using the other concerned process and environment metrics with the specified strategy automatically and dynamically.
