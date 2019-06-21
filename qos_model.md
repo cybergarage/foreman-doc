@@ -19,7 +19,7 @@ The QoS is defined the combination of process metrics in m which are related to 
 For example, a QoS is defined as the following:
 
 ```
-((m1 > 1.0) | ((m2 = 5)) & ((m3 > 2.0) | (m4 <= 1))
+((m1 > 1.0) | ((m2 = 5)) & ((m3 > 2.0) | (ABS(m4) <= 1))
 ```
 
 Then the first specified ANF is modified and optimized using the other concerned process and environment metrics with the specified strategy automatically and dynamically.
@@ -32,11 +32,19 @@ Currently, QoS should be specified by DNF (Disjunctive normal form) as the follo
 qos :=　"(" clause ("|" clause)* ")"
 clause := formula ("&" formula)*
 formula := "(" operand operator operand ")"
+
 operetor := "==" | "!=" | ">" | "<" | ">=" |  "<="
-operand := var | value
-var := [a-zA-Z0-9_\-.*]+
+operand := value | variable | function 
+
 value := <integer> | <floating_point>
+variable := [a-zA-Z0-9_\-.*]+
+function := name "(" (parameter)+ ")"
+parameter := value | variable
 ```
+
+The operand value is a literal such as `1.0` or `10`, and the operand variable is a variable name in [the registry manager](./data_model.md) which stores the latest fed metrics.
+
+The operand functions are embedded functions which return a value using the specified parameters. Please check [QoS Function](./qos_function.md) to know the embedded functions in more detail.
 
 ## QoS Action 
 
