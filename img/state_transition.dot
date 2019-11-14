@@ -1,0 +1,20 @@
+digraph node_statue_transition {
+    node [fontsize=14 width=2.0]
+
+	i [shape = "doublecircle", label="Initial"];
+	b [shape = "circle", label="Boostrap"];
+	r [shape = "circle", label="Ready"];
+	o [shape = "circle", label="Out of Date"];
+	s [shape = "circle", label="Stop"];
+
+    i -> b;
+    b -> r;
+    r -> o;
+    o -> r;
+
+    b -> s;
+    r -> s;
+    o -> s;
+
+    s -> i;
+}
