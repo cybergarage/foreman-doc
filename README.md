@@ -1,7 +1,8 @@
 ![foreman_logo](./img/icon.png)
 
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/cybergarage/foreman-cc)
-[![Build Status](https://github.com/cybergarage/uecho/actions/workflows/make.yml/badge.svg)](https://github.com/cybergarage/foreman-cc/actions/workflows/make.yml)
+[![Build Status](https://github.com/cybergarage/uecho/actions/workflows/make.yml/badge.svg)](https://github.com/cybergarage/foreman-cc/actions/workflows/make.yml)  [![Go Reference](https://pkg.go.dev/badge/github.com/cybergarage/foreman-go.svg)](https://pkg.go.dev/github.com/cybergarage/foreman-go)
+
 
 Foreman is an open-source framework for monitoring, analysis and alerting for cloud computing.
 
